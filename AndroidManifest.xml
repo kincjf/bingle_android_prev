@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.androidhuman.example.CameraPreview2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+        android:name="com.androidhuman.example.application.MyApp" >
+
+        <!-- android:screenOrientation="landscape"  가로모드 -->
+        <activity
+            android:name=".CameraPreview"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            android:configChanges = "keyboardHidden|orientation|screenSize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.androidhuman.example.blutooth.DeviceListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_device_list"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.androidhuman.example.Notification.GalleryActivity"
+            android:label="@string/title_activity_gallery"
+            android:configChanges = "keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity
+            android:name="com.androidhuman.example.gallery.GalleryActivity"
+            android:label="@string/title_activity_gallery"
+            android:configChanges = "keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity
+            android:name="com.androidhuman.example.gallery.PanoViewer"
+            android:label="@string/title_activity_pano_viewer"
+            android:configChanges = "keyboardHidden|orientation|screenSize" >
+        </activity>
+    </application>
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <!-- 카메라 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.read_external_storage" />
+
+    <!-- 블루투스통신 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

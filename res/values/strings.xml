@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, CameraPreview!</string>
+    <string name="app_name">CameraPreview2</string>
+    <string name="title_activity_device_list">DeviceListActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_gallery">GalleryActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_pano_viewer">PanoViewer</string>
+
+</resources>
