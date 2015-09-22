@@ -191,19 +191,13 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
 			public void onPictureTaken(byte[] data, Camera camera) {
 				Bitmap picture = BitmapFactory.decodeByteArray(data, 0, data.length);	//이미지객체생성
 				
-				
 				if(picture!=null){
-					   
-					
-					
-					
-                    File file=new File(SocketUtils.FOLDER_PATH);
+                    File file=new File(SocketUtils.TEMP_FOLDER_PATH);
                     if(!file.isDirectory()){
                         file.mkdir();
                     }
 
-                    file=new File(SocketUtils.FOLDER_PATH,System.currentTimeMillis()+".jpg");
-                    
+                    file=new File(SocketUtils.TEMP_FOLDER_PATH,System.currentTimeMillis()+".jpg");
                     
                     // 이미지를 찍는 각도(가로, 세로)에 맞추어 사진을 회전시켜 기본 방향으로 재조정한다.
 				    int rotation = mMyApp.getCurrentActivity().getWindowManager().getDefaultDisplay().getRotation();

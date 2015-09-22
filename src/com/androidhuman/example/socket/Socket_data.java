@@ -51,7 +51,7 @@ public class Socket_data extends Thread {
 			os = socket.getOutputStream();
 			
 			fis = new FileInputStream(filePath);
-			byte[] buf = new byte[1024*4];
+			byte[] buf = new byte[1024*128];
 			int data =0;
 			
 			while(true){

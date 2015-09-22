@@ -4,7 +4,7 @@ import android.os.Environment;
 
 public class SocketUtils {
 
-	static final public String SERVER_IP = "192.168.0.14";
+	static final public String SERVER_IP = "113.198.39.114";
 	static final public int SERVER_PORT = 2020;
 	static final public int SERVER_PORT2 = 2021;
 	
@@ -19,6 +19,6 @@ public class SocketUtils {
 	static final public int BLUETOOTH_CONNECTION = 1;
 	static final public int BLUETOOTH_CONNECTION_CLOSE = 0;
 	
-	static final public String FOLDER_PATH = Environment.getExternalStorageDirectory()+"/Pictures/pastels"; 
+	static final public String TEMP_FOLDER_PATH = Environment.getExternalStorageDirectory()+"/Pictures/pastel-temp"; 
 	static final public String IMAGE_FILEPATH= Environment.getExternalStorageDirectory()+"/Pictures/pastel/";
 }
