@@ -8,6 +8,7 @@ import com.androidhuman.example.blutooth.BluetoothClientThread;
 import com.androidhuman.example.blutooth.DeviceListActivity;
 import com.androidhuman.example.gallery.GalleryActivity;
 import com.androidhuman.example.socket.Socket_command;
+import com.androidhuman.example.utils.CustomIO;
 import com.androidhuman.example.utils.SocketUtils;
 import com.androidhuman.example.utils.ZipUtils;
 
@@ -141,11 +142,12 @@ public class CameraPreview extends Activity {
 	 * 사진촬영을 끝으로 파일경로에 있는 사진을 압축하려 소켓객체 쓰레드를 생성 및 실행.
 	 */
 	public static void doZipAndSocket(){
-		String filePath = SocketUtils.FOLDER_PATH;
+		String filePath = SocketUtils.TEMP_FOLDER_PATH;
+		
 		try {
 			ZipUtils.zip(filePath, filePath+"test.zip");
 			File file = new File(filePath);
-			file.delete();
+			CustomIO.deleteDirectory(file);		// 임시 파일 저장 경로 삭제
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -233,7 +235,7 @@ public class CameraPreview extends Activity {
 					Toast.makeText(getApplicationContext(), "블루투스 연결해 새꺄", 0).show();
 				}
 				
-				//mPreview.takePicture("My Photo","Photo taken by sample application");
+				mPreview.takePicture("My Photo","Photo taken by sample application");
 			}
 		});
 		
@@ -247,7 +249,7 @@ public class CameraPreview extends Activity {
 					e.printStackTrace();
 				} 
 				Log.i("test","F보낸다");
-//				btclientThread.write("Frn");
+				btclientThread.write("Frn");
 			}
 		});
 		
